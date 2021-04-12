@@ -1,0 +1,66 @@
+<form [formGroup]="livroForm">
+    <h1>Criando um novo livro</h1>
+    <mat-form-field class="form">
+        <mat-label>
+            Titulo
+        </mat-label>
+        <input [(ngModel)]="livro.titulo"
+               matInput
+               required
+               formControlName="titulo"
+               name="titulo"
+               placeholder="Ex. Computação"
+               type="text">
+        <mat-error
+                *ngIf="livroForm.controls.titulo.invalid">{{
+            getError(livroForm.controls.titulo.errors) }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>
+            Autor
+        </mat-label>
+        <input [(ngModel)]="livro.nomeAutor"
+               matInput
+               formControlName="autor"
+               name="autor"
+               placeholder="Ex. Bukowisk..."
+               type="text">
+        <mat-error
+                *ngIf="livroForm.controls.autor.invalid">{{
+            getError(livroForm.controls.autor.errors) }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>
+            Texto
+        </mat-label>
+        <textarea [(ngModel)]="livro.texto"
+                  matInput
+                  formControlName="texto"
+                  name="texto"
+                  placeholder="Ex. Bukowisk..."
+                  type="text">
+        </textarea>
+        <mat-error
+                *ngIf="livroForm.controls.texto.invalid">{{
+            getError(livroForm.controls.texto.errors) }}</mat-error>
+    </mat-form-field>
+
+    <div class="buttons">
+
+        <button (click)="create()"
+                [disabled]="livroForm.invalid"
+                class="mat-elevation-z8"
+                color="primary"
+                mat-stroked-button>Criar
+        </button>
+        <button (click)="cancel()"
+                class="mat-elevation-z8"
+                color="war"
+                mat-stroked-button>Cancelar
+        </button>
+
+    </div>
+
+</form>

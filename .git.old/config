@@ -1,0 +1,15 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+[remote "origin"]
+	url = https://github.com/PimentaDevDocs/bookstore-front.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[gui]
+	wmstate = zoomed
+	geometry = 1109x563+160+160 216 255
